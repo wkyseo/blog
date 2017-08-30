@@ -1,0 +1,78 @@
+@phone-max-width: 1023px;
+.ReactModal__Content.ReactModal__Content--after-open.text-input-dialog {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+  .dialog-container{
+    width: 100%;
+    height: 100%;
+    .text{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      outline: none;
+      box-sizing: border-box;
+      border: 34px solid #f1f3f5;
+      border-right-width: 140px;
+      border-bottom-width: 432px;
+      resize: none;
+      padding: 15px;
+      font-size: 20px;
+      color: #28a0ff;
+      font-weight: 300;
+      letter-spacing: 1.2px;
+    }
+    .done{
+      position: absolute;
+      top: 3.4%;
+      right: 4.4%;
+      padding: 10px;
+      color: #28a0ff;
+      font-size: 24px;
+    }
+    .mask{
+      opacity: 0;
+    }
+  }
+}
+
+@media (max-width: @phone-max-width) {
+  .ReactModal__Content.ReactModal__Content--after-open.text-input-dialog{
+    .dialog-container{
+      width: 100%;
+      height: 100%;
+      .text{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        outline: none;
+        box-sizing: border-box;
+        border: 20px solid #f1f3f5;
+        border-right-width: 90px;
+        border-bottom-width: 205px;
+        resize: none;
+        padding: 10px;
+        font-size: 16px;
+        color: #28a0ff;
+        font-weight: 300;
+        letter-spacing: 1px;
+      }
+      .done{
+        position: absolute;
+        top: 4%;
+        right: 4.5%;
+        padding: 10px;
+        color: #28a0ff;
+        font-size: 18px;
+      }
+    }
+  }
+}
