@@ -21,3 +21,8 @@ if(window._runtime == 'cordova' && /Android/.test(navigator.appVersion)) {
       });
     }
 ```
+
+## **正则表达式**
+
+[正则表达式初探一](https://github.com/wkyseo/blog/issues/3)
+
