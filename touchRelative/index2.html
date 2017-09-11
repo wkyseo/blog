@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>InfoRoll</title>
+    <style>
+        .box{
+            width:300px;
+            border: 1px solid #8f8f8f;
+        }
+        dl dt{
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .box1{
+            height:150px;
+            width:200px;
+            border:1px solid #8f8f8f;
+
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        ul{
+            height: 200px;
+        }
+        ul li{
+            height: 24px;
+        }
+        p{
+            text-align: center;
+        }
+    </style>
+
+    <script type="text/javascript">
+
+
+      window.onload = function(){
+        //无缝滚动效果
+        // var box1 = document.getElementsByClassName("box1");
+        // var com1 = document.getElementsByClassName("com1");
+        // var com2 = document.getElementsByClassName("com2");
+
+        // com2[0].innerHTML = com1[0].innerHTML;
+        // var myscr = function(){
+        //        if(box1[0].scrollTop >= com1[0].offsetHeight){
+        //      box1[0].scrollTop = 0;
+        //  }
+        //  else{
+        //      box1[0].scrollTop++;
+        //  }
+        //       }
+
+        //       //这里出现了很诡异的问题。如果使用function myscr(){}，传入"myscr()"会一直报错，不知道是什么问题。
+
+        //       var timer = setInterval(myscr,50);
+
+        //       box1[0].onmouseover = function(){
+        //        clearInterval(timer);
+        //       }
+        //       box1[0].onmouseout = function(){
+        //           timer = setInterval(myscr,50);
+        //       }
+        //间歇性滚动效果
+        var box1 = document.getElementsByClassName("box1");
+        box1[0].scrollTop = 0;
+        var liHeight = 24;
+        var timer;
+        function startMove(){
+          box1[0].scrollTop++;
+          timer = setInterval(myscr,50);
+        }
+        function myscr(){
+          if(box1[0].scrollTop % liHeight == 0){
+            clearInterval(timer);
+            setTimeout(startMove,2000);
+          }
+          else{
+            box1[0].scrollTop++;
+            if(box1[0].scrollTop >= box1[0].scrollHeight / 2){
+              box1[0].scrollTop = 0;
+            }
+          }
+        }
+        setTimeout(startMove,2000);
+      }
+
+    </script>
+</head>
+<body>
+<!--几种滚动实例-->
+<!-- <section class = "box">
+  <dl>
+    <dt>默认滚动</dt>
+    <dd><marquee>默认滚动</marquee></dd>
+  </dl>
+  <dl>
+    <dt>文字滚动(向右)</dt>
+    <dd><marquee direction="right">向右走...</marquee></dd>
+  </dl>
+  <dl>
+    <dt>文字滚动(来回滚动)</dt>
+    <dd><marquee behavior = "alternate" loop = "－1" scrollamount = "20">来回滚动...</marquee></dd>
+  </dl>
+  <dl>
+    <dt>向上滚....</dt>
+    <dd><marquee direction="up" width = "300px" height = "100px">向上走起...</marquee></dd>
+  </dl>
+</section> -->
+
+<!--实现无缝滚动效果-->
+<div class = "box1">
+    <ul class = "com1">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+    </ul>
+    <ul class = "com2">
+    </ul>
+</div>
+</body>
+</html>
